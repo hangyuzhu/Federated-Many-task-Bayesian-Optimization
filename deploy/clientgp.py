@@ -262,12 +262,6 @@ class ClientGP(Client):
         if self.acq_type == 'EI_w':
             return self.EI_w(mean_y_new=mean_y_new, sigma_y_new=sigma_y_new,
                              l_mean_y_new=l_mean_y_new, l_sigma_y_new=l_sigma_y_new)
-        elif self.acq_type == 'LCB' or self.acq_type == 'LCB_w':
-            return self.LCB(mean_y_new=mean_y_new, sigma_y_new=sigma_y_new)
-        elif self.acq_type == 'LCB_w1':
-            return self.LCB_w1(mean_y_new=mean_y_new, l_sigma_y_new=l_sigma_y_new)
-        elif self.acq_type == 'LCB_w2':
-            return self.LCB_w2(mean_y_new=mean_y_new, sigma_y_new=sigma_y_new, l_sigma_y_new=l_sigma_y_new)
         else:
             raise TypeError('No this type of acquisition function.')
 
@@ -299,32 +293,6 @@ class ClientGP(Client):
             l_exp_imp = (min_y - l_mean_y_new) * norm.cdf(l_z) + l_sigma_y_new * norm.pdf(l_z)
         exp_imp = self.gamma * exp_imp + (1 - self.gamma) * l_exp_imp
         return np.squeeze(exp_imp)
-
-    def LCB(self, mean_y_new, sigma_y_new):
-        beta_t = np.log(2 * self.dim)
-        if self.opt_obj == 'maximize':
-            ucb_value = mean_y_new + beta_t * sigma_y_new
-        else:
-            # minimization problems
-            ucb_value = mean_y_new - beta_t * sigma_y_new
-        return -np.squeeze(ucb_value)
-
-    def LCB_w1(self, mean_y_new, l_sigma_y_new):
-        beta_t = np.log(2 * self.dim)
-        if self.opt_obj == 'maximize':
-            ucb_value = mean_y_new + beta_t * l_sigma_y_new
-        else:
-            ucb_value = mean_y_new - beta_t * l_sigma_y_new
-        return -np.squeeze(ucb_value)
-
-    def LCB_w2(self, mean_y_new, sigma_y_new, l_sigma_y_new):
-        beta_t = np.log(2 * self.dim)
-        if self.opt_obj == 'maximize':
-            ucb_value = mean_y_new + beta_t * np.sqrt(2) * sigma_y_new**2 / (sigma_y_new + l_sigma_y_new)
-        else:
-            # minimization problems
-            ucb_value = mean_y_new - beta_t * np.sqrt(2) * sigma_y_new**2 / (sigma_y_new + l_sigma_y_new)
-        return -np.squeeze(ucb_value)
 
     def find_x_best(self):
         if self.next_method == 'sampling':
