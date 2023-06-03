@@ -2,6 +2,9 @@
  
 This is the code implementation of our paper "Federated Many-Task Bayesian Optimization". You can find our paper through the early access [TEVC](https://ieeexplore.ieee.org/document/10141991])
 
+## Reference
+***H. Zhu, X. Wang and Y. Jin, "Federated Many-Task Bayesian Optimization," in IEEE Transactions on Evolutionary Computation, doi: 10.1109/TEVC.2023.3279775.***
+
 ## Quick Start
 You can easily run the code by .sh files in the folder of experiments.
 
@@ -33,6 +36,3 @@ The average results of SMOP1 for task 5, 9, 13 and 17 in our paper.
   <img src="figures/SMOP1_13.png" alt="Figure 3" width="400" />
   <img src="figures/SMOP1_17.png" alt="Figure 4" width="400" />
 </div>
-
-## Reference
-***H. Zhu, X. Wang and Y. Jin, "Federated Many-Task Bayesian Optimization," in IEEE Transactions on Evolutionary Computation, doi: 10.1109/TEVC.2023.3279775.***
