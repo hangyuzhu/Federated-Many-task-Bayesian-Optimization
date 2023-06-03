@@ -9,6 +9,9 @@ sh mtp.sh: FHS, FHS-FEI
 
 sh mtpkt.sh: FHS-KT, FMTBO
 
+## Non-IID simulations
+Remove the argument --iid and set --np_per_dim for number of partitions per feature dimension
+
 ## SOP
 Contain bencmark single objective problems: **Griewank, Rastrigin, Ackley, Schwefel, Sphere, Rosenbrock, Weierstrass, Ellipsoid**
 
