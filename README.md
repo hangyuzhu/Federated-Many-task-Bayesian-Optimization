@@ -27,7 +27,7 @@ Contain the implementations of the server and clients.
 Unlike the paper "A federated data-driven evolutionary
 algorithm" (https://arxiv.org/pdf/2102.08288.pdf) samples solutions on a single server for each round, our approach optimizes and finds the solution on each client.
 
-## Figures
+## Some Figures
 The average results of SMOP1 for task 5, 9, 13 and 17 in our paper.
 
 <div>
