@@ -4,7 +4,9 @@ This is the code implementation of our paper "Federated Many-Task Bayesian Optim
 
 ## Quick Start
 You can easily run the code by .sh files in the folder of experiments.
+
 sh mtp.sh: FHS, FHS-FEI
+
 sh mtpkt.sh: FHS-KT, FMTBO
 
 ## SOP
