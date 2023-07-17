@@ -1,6 +1,6 @@
 # Federated Many-Task Bayesian Optimization
  
-This is the code implementation of our paper "Federated Many-Task Bayesian Optimization". You can find our paper through the early access [TEVC](https://ieeexplore.ieee.org/document/10141991])
+This is the code implementation of our paper "Federated Many-Task Bayesian Optimization". You can find our paper through the early access [TEVC](https://ieeexplore.ieee.org/document/10141991)
 
 ## Reference
 ***H. Zhu, X. Wang and Y. Jin, "Federated Many-Task Bayesian Optimization," in IEEE Transactions on Evolutionary Computation, doi: 10.1109/TEVC.2023.3279775.***
